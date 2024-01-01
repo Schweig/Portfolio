@@ -18,7 +18,7 @@ export default function Home() {
     <main className="flex flex-col justify-center items-center px-4 h-full">
       
       {currentProject < projects.length ? (
-        <div className="container mx-auto px-4 md:px-12">
+        <div className="mx-auto px-4 md:px-12">
         <Swiper
           onSwipedLeft={handleSwipedLeft}
           onSwipedRight={handleSwipedRight}
