@@ -1,9 +1,10 @@
 "use client";
 import { useState } from "react";
-import Card from "./components/Card";
-import Swiper from "./components/Swiper";
+import { Card } from "./components/Card";
+import { Swiper } from "./components/Swiper";
 import { projects } from "./constants/projects";
-import Script from 'next/script'
+import Script from "next/script";
+import React from "react";
 export default function Home() {
   const [currentProject, setCurrentProject] = useState(0);
 
@@ -47,14 +48,16 @@ export default function Home() {
           </div>
         </div>
       )}
-      <Script src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID" />
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_MEASUREMENT_ID}`}
+      />
       <Script id="google-analytics">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
  
-          gtag('config', 'GA_MEASUREMENT_ID');
+          gtag('config', ${process.env.GA_MEASUREMENT_ID}');
         `}
       </Script>
     </main>

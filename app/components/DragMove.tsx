@@ -1,31 +1,39 @@
 import React, { useState } from "react";
 
-export default function DragMove(props) {
+export default function DragMove(props: {
+  onPointerDown?: (() => void) | undefined;
+  onPointerUp?: (() => void) | undefined;
+  onPointerMove?: (() => void) | undefined;
+  onDragMove: any;
+  children?: any;
+  style?: any;
+  className?: any;
+}) {
   const {
-    onPointerDown = ()=> {},
-    onPointerUp = ()=> {},
-    onPointerMove = ()=> {},
+    onPointerDown = (_event: any) => {},
+    onPointerUp = (_event: any) => {},
+    onPointerMove = (_event: any) => {},
     onDragMove,
     children,
     style,
-    className
+    className,
   } = props;
 
   const [isDragging, setIsDragging] = useState(false);
 
-  const handlePointerDown = (e) => {
+  const handlePointerDown = (e: any) => {
     setIsDragging(true);
 
     onPointerDown(e);
   };
 
-  const handlePointerUp = (e) => {
+  const handlePointerUp = (e: any) => {
     setIsDragging(false);
 
     onPointerUp(e);
   };
 
-  const handlePointerMove = (e) => {
+  const handlePointerMove = (e: any) => {
     if (isDragging) onDragMove(e);
 
     onPointerMove(e);

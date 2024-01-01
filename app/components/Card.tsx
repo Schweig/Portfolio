@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useDrag } from "react-dnd";
+import React from "react";
+
 interface CardProps {
   title: string;
   description: string;
@@ -10,7 +11,7 @@ interface CardProps {
   imageAlt: string;
   style?: any;
 }
-export default function Card({
+export function Card({
   title,
   description,
   link,

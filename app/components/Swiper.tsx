@@ -1,6 +1,13 @@
 import { useState } from "react";
 import DragMove from "./DragMove";
-export default function Swiper({ onSwipedLeft, onSwipedRight, children }) {
+import React from "react";
+
+export function Swiper(props: {
+  onSwipedLeft: () => void;
+  onSwipedRight: () => void;
+  children: any;
+}) {
+  const { onSwipedLeft, onSwipedRight, children } = props;
   const [translate, setTranslate] = useState({
     x: 0,
     y: 0,
@@ -34,7 +41,7 @@ export default function Swiper({ onSwipedLeft, onSwipedRight, children }) {
       });
     }
   };
-  const handlePointerUp = (e: any) => {
+  const handlePointerUp = () => {
     setTranslate({
       x: 0,
       y: 0,
