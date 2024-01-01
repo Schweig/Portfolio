@@ -2,9 +2,9 @@ import React, { useState } from "react";
 
 export default function DragMove(props) {
   const {
-    onPointerDown,
-    onPointerUp,
-    onPointerMove,
+    onPointerDown = ()=> {},
+    onPointerUp = ()=> {},
+    onPointerMove = ()=> {},
     onDragMove,
     children,
     style,
@@ -43,9 +43,3 @@ export default function DragMove(props) {
     </div>
   );
 }
-
-DragMove.defaultProps = {
-  onPointerDown: () => {},
-  onPointerUp: () => {},
-  onPointerMove: () => {}
-};
