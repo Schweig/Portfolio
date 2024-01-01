@@ -15,8 +15,10 @@ export default function Home() {
     setCurrentProject(currentProject + 1);
   };
   return (
-    <main className="flex flex-col justify-center items-center p-10 h-full overflow-hidden overflow-y-hidden">
+    <main className="flex flex-col justify-center items-center px-4 h-full">
+      
       {currentProject < projects.length ? (
+        <div className="container mx-auto px-4 md:px-12">
         <Swiper
           onSwipedLeft={handleSwipedLeft}
           onSwipedRight={handleSwipedRight}
@@ -30,8 +32,9 @@ export default function Home() {
             imageAlt={projects[currentProject].title}
           ></Card>
         </Swiper>
+       </div> 
       ) : (
-        <div className="container my-12 mx-auto px-4 md:px-12">
+        <div className="container mx-auto px-4 md:px-12 overflow-auto">
           <div className="flex flex-wrap justify-between content-between md:flex-row sm:flex-col items-end">
             {projects.map((project) => {
               return (
