@@ -2,16 +2,27 @@
 import { useState } from "react";
 import { Card } from "./components/Card";
 import { Swiper } from "./components/Swiper";
-import { projects } from "./constants/projects";
+import { Project, projects } from "./constants/projects";
 import Script from "next/script";
 import React from "react";
 export default function Home() {
   const [currentProject, setCurrentProject] = useState(0);
 
+  const collectFeedback = (project: Project, sentiment: string) => {
+    if (!window.gtag){
+      return
+    }
+    window.gtag("event", "project_feedback", {
+      project: project.title,
+      sentiment: sentiment
+    });
+  }
   const handleSwipedLeft = () => {
+    collectFeedback(projects[currentProject], "negative")
     setCurrentProject(currentProject + 1);
   };
   const handleSwipedRight = () => {
+    collectFeedback(projects[currentProject], "positive")
     setCurrentProject(currentProject + 1);
   };
   return (
