@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, PointerEvent, CSSProperties, ReactNode } from "react";
 
 export default function DragMove(props: {
   onPointerDown?: (() => void) | undefined;
   onPointerUp?: (() => void) | undefined;
   onPointerMove?: (() => void) | undefined;
-  onDragMove: any;
-  children?: any;
-  style?: any;
-  className?: any;
+  onDragMove: (e: PointerEvent) => void;
+  children?: ReactNode;
+  style?: CSSProperties | undefined;
+  className?: string;
 }) {
   const {
-    onPointerDown = (_event: any) => {},
-    onPointerUp = (_event: any) => {},
-    onPointerMove = (_event: any) => {},
+    onPointerDown = (_event: PointerEvent<HTMLDivElement>) => {},
+    onPointerUp = (_event: PointerEvent<HTMLDivElement>) => {},
+    onPointerMove = (_event: PointerEvent<HTMLDivElement>) => {},
     onDragMove,
     children,
     style,
@@ -21,19 +21,19 @@ export default function DragMove(props: {
 
   const [isDragging, setIsDragging] = useState(false);
 
-  const handlePointerDown = (e: any) => {
+  const handlePointerDown = (e: PointerEvent<HTMLDivElement>) => {
     setIsDragging(true);
 
     onPointerDown(e);
   };
 
-  const handlePointerUp = (e: any) => {
+  const handlePointerUp = (e: PointerEvent<HTMLDivElement>) => {
     setIsDragging(false);
 
     onPointerUp(e);
   };
 
-  const handlePointerMove = (e: any) => {
+  const handlePointerMove = (e: PointerEvent<HTMLDivElement>) => {
     if (isDragging) onDragMove(e);
 
     onPointerMove(e);

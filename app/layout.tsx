@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import React from "react";
+import React, { ReactNode } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,10 +13,10 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode
 }) {
   return (
-    <html className="h-full" lang="en">
+    <html className="h-screen bg-stone-100" lang="en">
       <body className={inter.className + " h-full overflow-hidden"}>{children}</body>
     </html>
   );

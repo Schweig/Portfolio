@@ -9,20 +9,20 @@ export interface Project {
 export const projects: Array<Project> = [
     {
         title: 'FlySense',
-        description: 'An IoT vape detector deployed in 50 states and 22 countries',
+        description: 'A patented IoT vape detector deployed in 50 states and 22 countries',
         link: 'https://www.sotertechnologies.com/solutions/flysense/',
-        image: 'https://www.sotertechnologies.com/wp-content/uploads/2022/03/flysense-286-2022.png.webp'
+        image: '/flysense.png.webp'
     },
     {
-        title: 'Sample Project',
-        description: 'Some sample project ive worked really really hard on and care a lot about so Im putting it last of course',
-        link: 'https://i0.wp.com/katzenworld.co.uk/wp-content/uploads/2019/06/funny-cat.jpeg',
-        image: 'https://i0.wp.com/katzenworld.co.uk/wp-content/uploads/2019/06/funny-cat.jpeg'
+        title: 'Breakfast Ball',
+        description: 'A golf iOS app where you can track your rounds from your Apple Watch',
+        link: 'https://apps.apple.com/us/app/breakfast-ball/id6447217023',
+        image: '/breakfastball.png'
     },
     {
         title: 'This Portfolio',
-        description: 'An open source NextJs project for any sort of developer',
+        description: 'An open source NextJs project for any data driven individual',
         link: 'https://www.github.com/schweig',
-        image: 'https://www.sotertechnologies.com/wp-content/uploads/2022/03/flysense-286-2022.png.webp'
+        image: '/portfolio.png'
     },
 ]

@@ -19,7 +19,7 @@ export function Swiper(props: {
     if (active) {
       setTranslate({
         x: window.innerWidth / 2 - e.pageX,
-        y: 0,
+        y: window.innerWidth / 2 - e.pageY,
       });
 
       translate.x < 0
@@ -69,7 +69,10 @@ export function Swiper(props: {
             style={{
               transform: `translateX(${
                 -translate.x * 2
-              }px) rotate(${rotation}deg)`,
+              }px)
+              translateY(0px)
+              rotate(${rotation}deg)`,
+              transition: "ease-in-out"
             }}
           >
             {children}
