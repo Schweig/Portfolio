@@ -10,7 +10,7 @@ export const projects: Array<Project> = [
         title: 'FlySense',
         description: 'A patented IoT vape detector deployed in 50 states and 22 countries',
         link: 'https://www.sotertechnologies.com/solutions/flysense/',
-        image: '/flysense.png.webp'
+        image: '/flysense.png'
     },
     {
         title: 'Breakfast Ball',
