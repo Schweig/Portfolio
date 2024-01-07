@@ -5,7 +5,6 @@ export interface Project {
     image: string,
 }
 
-
 export const projects: Array<Project> = [
     {
         title: 'FlySense',
