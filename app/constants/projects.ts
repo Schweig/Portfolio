@@ -22,7 +22,19 @@ export const projects: Array<Project> = [
     {
         title: 'This Portfolio',
         description: 'An open source NextJs project for any data driven individual',
-        link: 'https://www.github.com/schweig',
+        link: 'https://github.com/Schweig/Portfolio',
         image: '/portfolio.png'
+    },
+    {
+        title: 'Anti-Clickbait',
+        description: 'An chrome extension replacing click bait titles with information about the article',
+        link: 'https://github.com/Schweig/Anti-Clickbait-Chrome/tree/master',
+        image: '/anticlickbait.png'
+    },
+    {
+        title: 'Github Game Off 2016',
+        description: 'A RTS strategy game themed as computers going to war against each other',
+        link: 'https://github.com/Schweig/game-off-2016',
+        image: '/computerwarfare.png'
     },
 ]
