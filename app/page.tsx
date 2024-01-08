@@ -179,7 +179,7 @@ export default function Home() {
         </main>
         </>
       ) : (
-        <div className="overflow-auto h-full bg-blue-300">
+        <div className="overflow-auto h-dvh bg-blue-300">
           <Header />
           <Gallery projects={projects} />
         </div>

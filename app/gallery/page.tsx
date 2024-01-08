@@ -6,7 +6,7 @@ import { Header } from "../components/Header";
 export default function GalleryPage() {
   return (
     <>
-      <div className="h-full w-full bg-blue-300 overflow-scroll">
+      <div className="h-dvh w-full bg-blue-300 overflow-scroll">
         <Header />
         <Gallery projects={projects} />
       </div>
